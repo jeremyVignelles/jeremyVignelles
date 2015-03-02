@@ -1,0 +1,13 @@
+{
+    "title": {
+        "index":"Mon CV",
+        "404":"404 Page non trouvée"
+    },
+    "error" : {
+        "404" : "La page que vous avez demandé n'a pas été trouvée.",
+        "404_backToHome" : "Êtes-vous perdu? Laissez-moi vous ramener à la <a href=\"/\">page d'accueil</a>"
+    },
+    "index" : {
+        "comingSoon" : "Bientôt..."
+    }
+}

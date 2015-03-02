@@ -1,0 +1,13 @@
+{
+    "title": {
+        "index":"My Résumé",
+        "404" : "404 - Not found"
+    },
+    "error" : {
+        "404" : "The page that you requested was not found.",
+        "404_backToHome" : "Are you lost? Let me bring you back to the <a href=\"/en\">home page</a>"
+    },
+    "index" : {
+        "comingSoon" : "Comming soon..."
+    }
+}

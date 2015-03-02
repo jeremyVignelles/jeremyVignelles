@@ -1,0 +1,6 @@
+extends ./layout
+block vars
+    - var title = _('title.404');
+block content
+    p= _('error.404')
+    p !{_('error.404_backToHome')}
