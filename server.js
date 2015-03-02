@@ -31,4 +31,4 @@ app.use(function (req, res) {
 app.listen(80);
 
 console.log("Started on port 80");
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=server.js.map

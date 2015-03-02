@@ -7,7 +7,7 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/index.js" />
+      <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/i18n/i18n.js" />
     </CLASSES>
     <SOURCES />
