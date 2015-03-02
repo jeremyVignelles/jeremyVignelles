@@ -28,7 +28,9 @@ app.use(function (req, res) {
     res.render('404.jade');
 });
 
-app.listen(80);
+var port = process.env.port || 80;
 
-console.log("Started on port 80");
+app.listen(port);
+
+console.log("Started on port " + port);
 //# sourceMappingURL=server.js.map
