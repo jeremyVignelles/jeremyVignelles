@@ -2,6 +2,7 @@
 * The translation module
 */
 var fs = require('fs');
+var url = require('url');
 var path = require('path');
 
 /**
@@ -25,11 +26,28 @@ var i18n = (function () {
         */
         this.middleware = function (req, res, next) {
             res.locals.locale = _this.getLocale(req);
+            res.locals.lang = res.locals.locale.substring(0, 2);
 
             var self = _this;
             res.locals._ = function (key) {
                 return self.translate(key, res.locals.locale);
             };
+
+            var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
+            var parsedUrl = url.parse(fullUrl);
+
+            if (res.locals.locale == 'fr-FR') {
+                parsedUrl.pathname = "/en" + parsedUrl.pathname;
+                res.locals.alternatives = {
+                    'en': url.format(parsedUrl)
+                };
+            } else {
+                parsedUrl.pathname = parsedUrl.pathname.replace("/en/", "/");
+                res.locals.alternatives = {
+                    'fr': url.format(parsedUrl)
+                };
+            }
+
             next();
         };
         this.translations["en-US"] = JSON.parse(fs.readFileSync(path.join(__dirname, "en-US", "translation.json"), { encoding: "UTF-8" }));

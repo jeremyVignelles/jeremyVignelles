@@ -1,8 +1,12 @@
 doctype html
-html
+html(lang=lang)
+    include ./mixins.jade
     head
         block vars
         title #{title} - Jérémy VIGNELLES
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, user-scalable=no")
+        +alternativeLanguages
         block styles
             link(rel="stylesheet",media="screen",href="/stylesheet/style.css")
         block scripts

@@ -7,6 +7,7 @@
 
 import express = require('express');
 import fs = require('fs');
+import url = require('url');
 import path = require('path');
 
 /**
@@ -34,11 +35,28 @@ export class i18n {
      */
     public middleware = (req : express.Request, res : express.Response, next : Function) => {
         res.locals.locale = this.getLocale(req);
+        res.locals.lang = res.locals.locale.substring(0,2);
 
         var self = this;
         res.locals._ = function(key : string) : string {
             return self.translate(key, res.locals.locale);
         };
+
+        var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
+        var parsedUrl = url.parse(fullUrl);
+
+        if(res.locals.locale == 'fr-FR') {
+            parsedUrl.pathname = "/en" + parsedUrl.pathname;
+            res.locals.alternatives = {
+                'en': url.format(parsedUrl)
+            };
+        } else {
+            parsedUrl.pathname = parsedUrl.pathname.replace("/en/", "/");
+            res.locals.alternatives = {
+                'fr': url.format(parsedUrl)
+            };
+        }
+
         next();
     }
 
