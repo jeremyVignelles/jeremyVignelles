@@ -5,11 +5,23 @@
 /**
  * Variables used to customize the website appearance
  */
+/**
+ * Sizes a content block, depending on the screen width
+ */
+/**
+ * Centers an inline element into a block.
+ * This requires that the parent of this block has a position: attribute set to anything other than "static" (e.g. : position: relative;)
+ */
 body {
   background: #888888;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
+}
+@media (min-height: 500px) {
+  body {
+    padding-top: 60px;
+  }
 }
 h1,
 h2,
@@ -32,12 +44,111 @@ h3 {
   font-size: 1.1em;
   margin: 0.5em 1.8em 0.5em 1.8em;
 }
-#content {
-  min-width: 500px;
+#navbar {
+  box-sizing: border-box;
+  height: 60px;
+  background: #3399ff;
+  color: white;
+  border-bottom: solid 2px #0059b3;
+}
+@media (min-height: 500px) {
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+#navbar-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  height: 58px;
   width: 100%;
+  min-width: 500px;
   margin: auto;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  #navbar-content {
+    width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #navbar-content {
+    width: 980px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #navbar-content {
+    width: 1180px;
+  }
+}
+#navbar-content a,
+#navbar-content a:hover,
+#navbar-content a:active,
+#navbar-content a:link,
+#navbar-content a:visited {
+  color: white;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+#navbar-content a:link {
+  text-decoration: none;
+}
+#navbar-content a:hover {
+  text-decoration: underline;
+}
+#navbar-content ul {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 58px;
+}
+#navbar-content ul li {
+  height: 58px;
+  width: 200px;
+  text-align: center;
+  position: relative;
+}
+#navbar-content ul li a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1em;
+  margin: auto;
+  display: block;
+}
+#navbar-content #fork-me {
+  width: 200px;
+  height: 58px;
+  text-align: center;
+  position: relative;
+}
+#navbar-content #fork-me a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 1em;
+  margin: auto;
+  display: block;
+}
+#content {
   background: #eeeeee;
   padding: 0.7em;
+  width: 100%;
+  min-width: 500px;
+  margin: auto;
   box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {

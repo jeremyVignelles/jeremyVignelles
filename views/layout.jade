@@ -11,6 +11,13 @@ html(lang=lang)
             link(rel="stylesheet",media="screen",href="/stylesheet/style.css")
         block scripts
     body
+        nav#navbar
+            div#navbar-content
+                ul
+                    li: a(href="/") Home page
+                    li: a(href="/en") English version
+                div#fork-me
+                    a(href="https://github.com/jeremyVignelles/jeremyVignelles") Fork me
         section#content
             h1 #{title}
             block content

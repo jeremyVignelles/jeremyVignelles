@@ -1,0 +1,39 @@
+/**
+ * Sizes a content block, depending on the screen width
+ */
+.size-content() {
+  width: 100%;
+  min-width: 500px;
+  margin: auto;
+  box-sizing: border-box;
+
+  @media screen {
+    @media (min-width: @screen-small) {
+      width: @content-small;
+    }
+
+    @media (min-width: @screen-medium) {
+      width: @content-medium;
+    }
+
+    @media (min-width: @screen-large) {
+      width: @content-large;
+    }
+  }
+}
+
+/**
+ * Centers an inline element into a block.
+ * This requires that the parent of this block has a position: attribute set to anything other than "static" (e.g. : position: relative;)
+ */
+.center-inline(@width, @height) {
+  position:absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: @width;
+  height: @height;
+  margin: auto;
+  display: block;
+}
