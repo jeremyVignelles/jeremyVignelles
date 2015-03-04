@@ -1,5 +1,5 @@
 /**
-* Created by cube45 on 01/03/15.
+* The translation module
 */
 var fs = require('fs');
 var path = require('path');

@@ -1,5 +1,5 @@
 /**
- * Created by cube45 on 01/03/15.
+ * The translation module
  */
 
 ///<reference path='../DefinitelyTyped/express/express.d.ts' />

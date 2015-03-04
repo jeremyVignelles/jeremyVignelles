@@ -1,3 +1,6 @@
+/**
+* The main server file
+*/
 ///<reference path='DefinitelyTyped/express/express.d.ts' />
 ///<reference path='i18n/i18n' />
 var express = require("express");
@@ -28,6 +31,7 @@ app.use(function (req, res) {
     res.render('404.jade');
 });
 
+// Azure sets process.env.port so that we know on which port we need to listen. Falls back to 80 for local testing
 var port = process.env.port || 80;
 
 app.listen(port);

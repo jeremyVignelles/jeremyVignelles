@@ -1,6 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext);
+/**
+  The main file of the stylesheet
+*/
+/**
+ * Variables used to customize the website appearance
+ */
 body {
-  background: #eeeeee;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  background: #888888;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 h1,
 h2,
@@ -8,5 +17,40 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+h1 {
+  font-size: 1.9em;
+  margin: 0.5em 0.2em 0.5em 0.2em;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0.8em 0.5em 0.8em;
+}
+h3 {
+  font-size: 1.1em;
+  margin: 0.5em 1.8em 0.5em 1.8em;
+}
+#content {
+  width: 100%;
+  margin: auto;
+  background: #eeeeee;
+  padding: 0.7em;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  #content {
+    width: 750px;
+  }
+}
+@media screen and (min-width: 992px) {
+  #content {
+    width: 980px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  #content {
+    width: 1180px;
+  }
 }

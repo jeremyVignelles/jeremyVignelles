@@ -1,3 +1,6 @@
+/**
+ * The main server file
+ */
 ///<reference path='DefinitelyTyped/express/express.d.ts' />
 ///<reference path='i18n/i18n' />
 
@@ -14,7 +17,7 @@ app.use(express.static(__dirname + "/static"));
 app.engine('jade', require("jade").__express);
 
 // Translation
-app.use(i18n.middleware)
+app.use(i18n.middleware);
 
 app.get('/', function(req : express.Request, res : express.Response) {
     res.render('index.jade');
@@ -24,11 +27,12 @@ app.get('/en', function(req : express.Request, res : express.Response) {
     res.render('index.jade');
 });
 
-app.use(function(req, res) {
+app.use(function(req : express.Request, res : express.Response) {
     res.status(404);
     res.render('404.jade');
 });
 
+// Azure sets process.env.port so that we know on which port we need to listen. Falls back to 80 for local testing
 var port = process.env.port || 80;
 
 app.listen(port);
