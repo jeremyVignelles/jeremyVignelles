@@ -5,7 +5,9 @@
     },
     "error" : {
         "404" : "The page that you requested was not found.",
-        "404_backToHome" : "Are you lost? Let me bring you back to the <a href=\"/en\">home page</a>"
+        "404_backToHome" : "Are you lost? Let me bring you back to the <a href=\"/en\">home page</a>",
+        "unsupported_ie" : "Your version of Microsoft Internet Explorer is not supported and you may experience unexpected behaviours. Consider using another browser. Why not your mobile phone?",
+        "using_ie" : "You are using an old version of Microsoft Internet Explorer. This website is now working in degraded mode, and you could fully enjoy it by using another browser.<br /> Did you try with your smartphone's browser?"
     },
     "index" : {
         "comingSoon" : "Coming soon..."

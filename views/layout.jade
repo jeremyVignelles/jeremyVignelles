@@ -4,11 +4,13 @@ html(lang=lang)
     head
         block vars
         title #{title} - Jérémy VIGNELLES
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, user-scalable=no")
         +alternativeLanguages
         block styles
             link(rel="stylesheet",media="screen",href="/stylesheet/style.css")
+            | <!--[if lte IE 10]> <link rel="stylesheet" media="screen" href="/stylesheet/style-ie.css"> <![endif]-->
         block scripts
     body
         nav#navbar
@@ -18,6 +20,8 @@ html(lang=lang)
                     li: a(href="/en") English version
                 div#fork-me
                     a(href="https://github.com/jeremyVignelles/jeremyVignelles") Fork me
-        section#content
+        main#content
+            | <!--[if lt IE 9]> <div class="alert error">!{_("error.unsupported_ie")}</div> <![endif]-->
+            | <!--[if (gte IE 9)&(lt IE 10)]> <div class="alert warning">!{_("error.using_ie")}</div> <![endif]-->
             h1 #{title}
             block content

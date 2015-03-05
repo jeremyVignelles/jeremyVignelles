@@ -5,7 +5,9 @@
     },
     "error" : {
         "404" : "La page que vous avez demandé n'a pas été trouvée.",
-        "404_backToHome" : "Êtes-vous perdu? Laissez-moi vous ramener à la <a href=\"/\">page d'accueil</a>"
+        "404_backToHome" : "Êtes-vous perdu? Laissez-moi vous ramener à la <a href=\"/\">page d'accueil</a>",
+        "unsupported_ie" : "Votre version d'Internet explorer n'est pas supportée et vous pouvez constater des comportements inattendus.<br />Avez-vous envisagé d'utiliser un autre navigateur? Pourquoi pas votre téléphone portable?",
+        "using_ie" : "Vous utilisez une ancienne version de Microsoft Internet Explorer. Ce site fonctionne désormais en mode dégradé, et vous pourriez en profiter pleinement en utilisant un autre navigateur.<br />Avez-vous essayé avec le navigateur de votre smartphone?"
     },
     "index" : {
         "comingSoon" : "Bientôt..."

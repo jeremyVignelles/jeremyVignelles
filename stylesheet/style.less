@@ -40,11 +40,7 @@ h3 {
 
 
 #navbar {
-  box-sizing: border-box;
-  height: @navbar-height;
-  background: @navbar-background;
-  color: @navbar-color;
-  border-bottom: solid @navbar-border-height darken(@navbar-background, 25%);
+  display:block;
 
   @media (min-height : @screen-min-height-navbar) {
     position: fixed;
@@ -55,11 +51,16 @@ h3 {
 }
 
 #navbar-content {
-  @height: @navbar-height - @navbar-border-height;
   display:flex;
   flex-direction: row;
   justify-content: left;
-  height: @height;
+  box-sizing: border-box;
+  height: @navbar-height;
+  background: @navbar-background;
+  border-bottom: solid @navbar-border-height darken(@navbar-background, 25%);
+  color: @navbar-color;
+
+  @height: @navbar-height - @navbar-border-height;
   .size-content();
 
 
@@ -112,8 +113,25 @@ h3 {
 }
 
 #content {
+  display: block;
   background: @content-background;
   padding: 0.7em;
 
   .size-content();
+}
+
+.alert {
+  margin: 50px;
+  padding: 20px;
+  border: solid 1px black;
+}
+
+.error {
+  background: @error-background;
+  color: @error-color;
+}
+
+.warning {
+  background: @warning-background;
+  color: @warning-color;
 }
