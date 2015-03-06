@@ -19,6 +19,44 @@ app.engine('jade', require("jade").__express);
 // Translation
 app.use(i18n.middleware);
 
+app.get('/svg/logo.svg', function(req : express.Request, res : express.Response) {
+    var geo = require('./tools/geometryTools');
+    res.locals.geometryTools = geo;
+
+    var imageSize = 128;
+    var imageHalfSize = imageSize / 2;
+    var radius = 60;
+    var margin = imageHalfSize - radius;
+    var apothem = (3 * radius) / (2 * Math.sqrt(3));
+
+    res.locals.parameters = {
+        thickness: 30, // The letter thickness
+        imageSize: imageSize, // The size of the SVG
+        radius: radius, // The radius of the circumscribed circle
+        apothem: apothem // radius of the inscribed circle
+    };
+
+    // The lines of the hexagon, starting from the top corner and walking through the edges clockwise
+    res.locals.parameters.hexagonLines = [
+        new geo.Line(new geo.Point(imageHalfSize, margin), Math.PI / 6),
+        new geo.Line(new geo.Point(imageHalfSize + apothem, 0), Math.PI / 2),
+        new geo.Line(new geo.Point(imageHalfSize, imageHalfSize + radius), 5 * Math.PI / 6),
+        new geo.Line(new geo.Point(imageHalfSize, imageHalfSize + radius), Math.PI / 6),
+        new geo.Line(new geo.Point(imageHalfSize - apothem, 0), Math.PI / 2),
+        new geo.Line(new geo.Point(imageHalfSize, margin), 5 * Math.PI / 6)
+    ];
+
+    res.locals.parameters.boundsLines = [
+      new geo.Line(new geo.Point(0, 0), 0),
+      new geo.Line(new geo.Point(imageSize, imageSize), Math.PI / 2),
+      new geo.Line(new geo.Point(imageSize, imageSize), 0),
+      new geo.Line(new geo.Point(0, 0), Math.PI / 2)
+    ];
+
+    res.contentType("image/svg+xml");
+    res.render('svg/logo.jade');
+});
+
 app.get('/', function(req : express.Request, res : express.Response) {
     res.render('index.jade');
 });

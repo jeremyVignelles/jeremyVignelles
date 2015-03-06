@@ -2,11 +2,13 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/tools/geometryTools.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/i18n/i18n.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/tools/geometryTools.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/i18n/i18n.js" />
     </CLASSES>
