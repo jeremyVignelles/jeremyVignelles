@@ -2,20 +2,14 @@ doctype xml
 mixin drawHexagonLine(line, intersectWithLine1, intersectWithLine2)
     - var point1 = line.getIntersectionWith(intersectWithLine1);
     - var point2 = line.getIntersectionWith(intersectWithLine2);
-    line(x1=point1.x, y1=point1.y, x2=point2.x, y2=point2.y, style="stroke:#888;stroke-width:2")
+    line(x1=point1.x, y1=point1.y, x2=point2.x, y2=point2.y, style="stroke:#888;stroke-width:3")
 
-- var showLines = false;
 svg(xmlns="http://www.w3.org/2000/svg",
     version="1.1",
     width=parameters.imageSize,
     height=parameters.imageSize)
-    if showLines
-        + drawHexagonLine(parameters.hexagonLines[0],parameters.boundsLines[0],parameters.boundsLines[1])
-        + drawHexagonLine(parameters.hexagonLines[1],parameters.boundsLines[0],parameters.boundsLines[2])
-        + drawHexagonLine(parameters.hexagonLines[2],parameters.boundsLines[1],parameters.boundsLines[2])
-        + drawHexagonLine(parameters.hexagonLines[3],parameters.boundsLines[2],parameters.boundsLines[3])
-        + drawHexagonLine(parameters.hexagonLines[4],parameters.boundsLines[2],parameters.boundsLines[0])
-        + drawHexagonLine(parameters.hexagonLines[5],parameters.boundsLines[3],parameters.boundsLines[0])
+    each line, index in parameters.hexagonLines
+        + drawHexagonLine(line,parameters.hexagonLines[(index + 1) % 6],parameters.hexagonLines[(index + 5) % 6])
 
     - var bottomRightCorner = parameters.hexagonLines[1].getIntersectionWith(parameters.hexagonLines[2]);
     - var startY = ((parameters.imageSize / 2) - parameters.radius);
