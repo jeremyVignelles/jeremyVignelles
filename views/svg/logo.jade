@@ -19,7 +19,7 @@ svg(xmlns="http://www.w3.org/2000/svg",
 
     - var bottomRightCorner = parameters.hexagonLines[1].getIntersectionWith(parameters.hexagonLines[2]);
     - var startY = ((parameters.imageSize / 2) - parameters.radius);
-    rect(x=(bottomRightCorner.x - parameters.thickness), y=startY, width=parameters.thickness, height=bottomRightCorner.y-startY, style="fill:#39F")
+    rect(x=(bottomRightCorner.x - parameters.thickness), y=startY, width=parameters.thickness, height=bottomRightCorner.y-startY, style="fill:#0059b3")
 
     - var parallelLine = parameters.hexagonLines[2].translate(-parameters.thickness);
     - var points = [];
@@ -27,7 +27,7 @@ svg(xmlns="http://www.w3.org/2000/svg",
     - points.push(bottomRightCorner);
     - points.push((parameters.imageSize / 2) + ',' + ((parameters.imageSize / 2) + parameters.radius));
     - points.push(parallelLine.getIntersectionWith(parameters.hexagonLines[3]));
-    polygon(points=points.join(' '), style="fill:#5CF")
+    polygon(points=points.join(' '), style="fill:#3399FF")
 
     - points = [];
     - parallelLine = parameters.hexagonLines[3].translate(parameters.thickness);
@@ -35,4 +35,4 @@ svg(xmlns="http://www.w3.org/2000/svg",
     - points.push((parameters.imageSize / 2) + ',' + ((parameters.imageSize / 2) + parameters.radius));
     - points.push(parameters.hexagonLines[3].getIntersectionWith(parameters.hexagonLines[4]));
     - points.push(parallelLine.getIntersectionWith(parameters.hexagonLines[4]));
-    polygon(points=points.join(' '), style="fill:#DEF")
+    polygon(points=points.join(' '), style="fill:#5CF")
