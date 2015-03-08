@@ -2,22 +2,27 @@
  * Defines stylesheet that will only apply to IE 9 & 10
  * I wish I could remove this file in the near future...
  */
-#navbar-content {
-  position: relative;
-}
-#navbar-content ul {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-#navbar-content ul li {
-  float: left;
-}
-#navbar-content #fork-me {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-#navbar-content #fork-me:after {
-  clear: both;
+/**
+ * Variables used to customize the website appearance
+ */
+@media (min-width: 768px) {
+  #navbar-inner-content {
+    position: relative;
+  }
+  #navbar-inner-content ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  #navbar-inner-content ul li {
+    float: left;
+  }
+  #navbar-inner-content #fork-me {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #navbar-inner-content #fork-me:after {
+    clear: both;
+  }
 }

@@ -1,0 +1,136 @@
+#navbar {
+  display:block;
+
+  @media (min-height : @screen-min-height-navbar) and (min-width: @screen-small) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+#navbar-content {
+  height: @navbar-height;
+  background: @navbar-background;
+  border-bottom: solid @navbar-border-height darken(@navbar-background, 25%);
+  color: @navbar-color;
+
+  .size-content();
+}
+
+@navbar-inner-height: @navbar-height - @navbar-border-height;
+
+#navbar-inner-content {
+  display:flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  height: @navbar-inner-height;
+
+  a, a:hover, a:active, a:link, a:visited {
+    color: @navbar-color;
+    font-weight: 300;
+    font-size: 1.1em;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  /* This style is applied only when the navbar is not collapsed*/
+  @media(min-width:@screen-small) {
+    ul {
+      flex: 1;
+      display:flex;
+      flex-direction: row;
+      justify-content: left;
+      height: @navbar-inner-height;
+
+      li {
+        height: @navbar-inner-height;
+        width: @nav-item-width;
+        text-align: center;
+        position:relative;
+
+        a {
+          .center-inline(100%, 1em);
+        }
+      }
+    }
+
+    #fork-me {
+      width: 200px;
+      height: @navbar-inner-height;
+      text-align: center;
+      position: relative;
+
+      a {
+        .center-inline(100%, 1em);
+      }
+    }
+  }
+}
+
+/* Selectors that makes the navbar collapsible : */
+#collapse-button, #collapse-button-checkbox {
+  display: none;
+}
+
+@media(max-width:@screen-small) {
+  #collapse-button {
+    display: block;
+    width: 100%;
+    height: @navbar-inner-height;
+    position:relative;
+
+    label {
+      padding-left: 1em;
+      padding-right: 1em;
+      .center-inline(100%, 1em);
+    }
+  }
+
+  #collapse-button-checkbox {
+    z-index: 100;
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: @navbar-inner-height;
+    position:absolute;
+    top:0;
+    left: 0;
+  }
+
+  #navbar-content {
+    height: auto;
+  }
+
+  #navbar-inner-content {
+    display: none;
+  }
+
+  #collapse-button-checkbox:checked~#collapse-button {
+    background: darken(@navbar-background, 25%);
+  }
+
+  #collapse-button-checkbox:checked~#navbar-inner-content {
+    display: block;
+    height: auto;
+
+    li {
+      margin: 1em;
+    }
+
+    #fork-me {
+      margin: 1em;
+    }
+  }
+}

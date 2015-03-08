@@ -12,13 +12,16 @@
  * Centers an inline element into a block.
  * This requires that the parent of this block has a position: attribute set to anything other than "static" (e.g. : position: relative;)
  */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   background: #888888;
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
 }
-@media (min-height: 500px) {
+@media (min-height: 500px) and (min-width: 768px) {
   body {
     padding-top: 60px;
   }
@@ -44,10 +47,14 @@ h3 {
   font-size: 1.1em;
   margin: 0.5em 1.8em 0.5em 1.8em;
 }
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
 #navbar {
   display: block;
 }
-@media (min-height: 500px) {
+@media (min-height: 500px) and (min-width: 768px) {
   #navbar {
     position: fixed;
     top: 0;
@@ -56,9 +63,6 @@ h3 {
   }
 }
 #navbar-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
   height: 60px;
   background: #3399ff;
   border-bottom: solid 2px #0059b3;
@@ -66,7 +70,6 @@ h3 {
   width: 100%;
   min-width: 500px;
   margin: auto;
-  box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
   #navbar-content {
@@ -83,64 +86,129 @@ h3 {
     width: 1180px;
   }
 }
-#navbar-content a,
-#navbar-content a:hover,
-#navbar-content a:active,
-#navbar-content a:link,
-#navbar-content a:visited {
+#navbar-inner-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 100%;
+  height: 58px;
+  /* This style is applied only when the navbar is not collapsed*/
+}
+#navbar-inner-content a,
+#navbar-inner-content a:hover,
+#navbar-inner-content a:active,
+#navbar-inner-content a:link,
+#navbar-inner-content a:visited {
   color: white;
   font-weight: 300;
   font-size: 1.1em;
 }
-#navbar-content a:link {
+#navbar-inner-content a:link {
   text-decoration: none;
 }
-#navbar-content a:hover {
+#navbar-inner-content a:hover {
   text-decoration: underline;
 }
-#navbar-content ul {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
+#navbar-inner-content ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
-  height: 58px;
 }
-#navbar-content ul li {
-  height: 58px;
-  width: 200px;
-  text-align: center;
-  position: relative;
+@media (min-width: 768px) {
+  #navbar-inner-content ul {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    height: 58px;
+  }
+  #navbar-inner-content ul li {
+    height: 58px;
+    width: 200px;
+    text-align: center;
+    position: relative;
+  }
+  #navbar-inner-content ul li a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1em;
+    margin: auto;
+    display: block;
+  }
+  #navbar-inner-content #fork-me {
+    width: 200px;
+    height: 58px;
+    text-align: center;
+    position: relative;
+  }
+  #navbar-inner-content #fork-me a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1em;
+    margin: auto;
+    display: block;
+  }
 }
-#navbar-content ul li a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 1em;
-  margin: auto;
-  display: block;
+/* Selectors that makes the navbar collapsible : */
+#collapse-button,
+#collapse-button-checkbox {
+  display: none;
 }
-#navbar-content #fork-me {
-  width: 200px;
-  height: 58px;
-  text-align: center;
-  position: relative;
-}
-#navbar-content #fork-me a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 1em;
-  margin: auto;
-  display: block;
+@media (max-width: 768px) {
+  #collapse-button {
+    display: block;
+    width: 100%;
+    height: 58px;
+    position: relative;
+  }
+  #collapse-button label {
+    padding-left: 1em;
+    padding-right: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1em;
+    margin: auto;
+    display: block;
+  }
+  #collapse-button-checkbox {
+    z-index: 100;
+    display: block;
+    opacity: 0;
+    width: 100%;
+    height: 58px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #navbar-content {
+    height: auto;
+  }
+  #navbar-inner-content {
+    display: none;
+  }
+  #collapse-button-checkbox:checked ~ #collapse-button {
+    background: #0059b3;
+  }
+  #collapse-button-checkbox:checked ~ #navbar-inner-content {
+    display: block;
+    height: auto;
+  }
+  #collapse-button-checkbox:checked ~ #navbar-inner-content li {
+    margin: 1em;
+  }
+  #collapse-button-checkbox:checked ~ #navbar-inner-content #fork-me {
+    margin: 1em;
+  }
 }
 #content {
   display: block;
@@ -149,7 +217,6 @@ h3 {
   width: 100%;
   min-width: 500px;
   margin: auto;
-  box-sizing: border-box;
 }
 @media screen and (min-width: 768px) {
   #content {

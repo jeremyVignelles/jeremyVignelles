@@ -7,13 +7,17 @@
 @import "variables.less";
 @import "mixins.less";
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: @body-background;
   font-family: 'Open Sans', sans-serif;
-  margin: 0;
-  padding: 0;
 
-  @media (min-height : @screen-min-height-navbar) {
+  @media (min-height : @screen-min-height-navbar) and (min-width: @screen-small) {
     padding-top: @navbar-height;
   }
 }
@@ -38,79 +42,12 @@ h3 {
   margin: 0.5em 1.8em 0.5em 1.8em;
 }
 
-
-#navbar {
-  display:block;
-
-  @media (min-height : @screen-min-height-navbar) {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
-#navbar-content {
-  display:flex;
-  flex-direction: row;
-  justify-content: left;
-  box-sizing: border-box;
-  height: @navbar-height;
-  background: @navbar-background;
-  border-bottom: solid @navbar-border-height darken(@navbar-background, 25%);
-  color: @navbar-color;
-
-  @height: @navbar-height - @navbar-border-height;
-  .size-content();
-
-
-  a, a:hover, a:active, a:link, a:visited {
-    color: @navbar-color;
-    font-weight: 300;
-    font-size: 1.1em;
-  }
-
-  a:link {
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  ul {
-    flex: 1;
-    display:flex;
-    flex-direction: row;
-    justify-content: left;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    height: @height;
-
-    li {
-      height: @height;
-      width: @nav-item-width;
-      text-align: center;
-      position:relative;
-
-      a {
-        .center-inline(100%, 1em);
-      }
-    }
-  }
-
-  #fork-me {
-    width: 200px;
-    height: @height;
-    text-align: center;
-    position: relative;
-
-    a {
-      .center-inline(100%, 1em);
-    }
-  }
-}
+@import "navbar.less";
 
 #content {
   display: block;

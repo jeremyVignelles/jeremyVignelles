@@ -2,26 +2,31 @@
  * Defines stylesheet that will only apply to IE 9 & 10
  * I wish I could remove this file in the near future...
  */
-#navbar-content {
-  position:relative;
 
-  ul {
-    position:absolute;
-    left:0;
-    top:0;
+@import "variables.less";
 
-    li {
-      float: left;
+@media(min-width:@screen-small) {
+  #navbar-inner-content {
+    position:relative;
+
+    ul {
+      position:absolute;
+      left:0;
+      top:0;
+
+      li {
+        float: left;
+      }
     }
-  }
 
-  #fork-me {
-    position:absolute;
-    right:0;
-    top:0;
+    #fork-me {
+      position:absolute;
+      right:0;
+      top:0;
 
-    &:after {
-      clear:both;
+      &:after {
+        clear:both;
+      }
     }
   }
 }

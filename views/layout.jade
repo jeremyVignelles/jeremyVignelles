@@ -15,11 +15,15 @@ html(lang=lang)
     body
         nav#navbar
             div#navbar-content
-                ul
-                    li: a(href="/") Home page
-                    li: a(href="/en") English version
-                div#fork-me
-                    a(href="https://github.com/jeremyVignelles/jeremyVignelles") Fork me
+                input(type="checkbox", id="collapse-button-checkbox")
+                div(id="collapse-button")
+                    label(for="collapse-button-checkbox")= _("menu.collapse-button")
+                div#navbar-inner-content
+                    ul(role="menu")
+                        li: a(href="/") Home page
+                        li: a(href="/en") English version
+                    div#fork-me
+                        a(href="https://github.com/jeremyVignelles/jeremyVignelles") Fork me
         main#content
             | <!--[if lt IE 9]> <div class="alert error">!{_("error.unsupported_ie")}</div> <![endif]-->
             | <!--[if (gte IE 9)&(lt IE 10)]> <div class="alert warning">!{_("error.using_ie")}</div> <![endif]-->
