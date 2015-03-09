@@ -115,14 +115,6 @@
 
   #navbar-inner-content {
     display: none;
-  }
-
-  #collapse-button-checkbox:checked~#collapse-button {
-    background: darken(@navbar-background, 25%);
-  }
-
-  #collapse-button-checkbox:checked~#navbar-inner-content {
-    display: block;
     height: auto;
 
     li {
@@ -132,5 +124,13 @@
     #fork-me {
       margin: 1em;
     }
+  }
+
+  #collapse-button.opened {
+    background: darken(@navbar-background, 25%);
+  }
+
+  #navbar-inner-content.opened {
+    display: block;
   }
 }

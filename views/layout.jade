@@ -12,11 +12,12 @@ html(lang=lang)
             link(rel="stylesheet",media="screen",href="/stylesheet/style.css")
             | <!--[if lte IE 10]> <link rel="stylesheet" media="screen" href="/stylesheet/style-ie.css"> <![endif]-->
         block scripts
+            script(type="text/javascript", src="/script/script.js", defer=true)
     body
         nav#navbar
             div#navbar-content
-                input(type="checkbox", id="collapse-button-checkbox")
-                div(id="collapse-button")
+                input#collapse-button-checkbox(type="checkbox")
+                div#collapse-button
                     label(for="collapse-button-checkbox")= _("menu.collapse-button")
                 div#navbar-inner-content
                     ul(role="menu")

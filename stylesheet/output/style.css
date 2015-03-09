@@ -194,19 +194,19 @@ p {
   }
   #navbar-inner-content {
     display: none;
-  }
-  #collapse-button-checkbox:checked ~ #collapse-button {
-    background: #0059b3;
-  }
-  #collapse-button-checkbox:checked ~ #navbar-inner-content {
-    display: block;
     height: auto;
   }
-  #collapse-button-checkbox:checked ~ #navbar-inner-content li {
+  #navbar-inner-content li {
     margin: 1em;
   }
-  #collapse-button-checkbox:checked ~ #navbar-inner-content #fork-me {
+  #navbar-inner-content #fork-me {
     margin: 1em;
+  }
+  #collapse-button.opened {
+    background: #0059b3;
+  }
+  #navbar-inner-content.opened {
+    display: block;
   }
 }
 #content {

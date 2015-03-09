@@ -5,12 +5,14 @@
         <item url="file://$PROJECT_DIR$/tools/geometryTools.js" />
         <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/i18n/i18n.js" />
+        <item url="file://$PROJECT_DIR$/script/script.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/tools/geometryTools.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
       <root url="file://$PROJECT_DIR$/i18n/i18n.js" />
+      <root url="file://$PROJECT_DIR$/script/script.js" />
     </CLASSES>
     <SOURCES />
   </library>
