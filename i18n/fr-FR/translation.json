@@ -4,7 +4,8 @@
         "404":"404 Page non trouvée"
     },
     "menu": {
-        "collapse-button": "Menu"
+        "collapse-button": "Menu",
+        "show-on-github": "Show on GitHub"
     },
     "error" : {
         "404" : "La page que vous avez demandé n'a pas été trouvée.",
