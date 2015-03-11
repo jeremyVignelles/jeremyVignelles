@@ -6,6 +6,7 @@
 var express = require("express");
 var i18nModule = require("./i18n/i18n");
 var router = require("./router");
+var geo = require('./tools/geometryTools');
 var i18n = new i18nModule.i18n();
 var app = express();
 app.use('/stylesheet', express.static(__dirname + "/stylesheet/output"));
@@ -15,7 +16,6 @@ app.engine('jade', require("jade").__express);
 // Translation
 app.use(i18n.middleware);
 app.get('/svg/logo.svg', function (req, res) {
-    var geo = require('./tools/geometryTools');
     res.locals.geometryTools = geo;
     var imageSize = 128;
     var imageHalfSize = imageSize / 2;

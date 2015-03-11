@@ -7,6 +7,7 @@
 import express = require("express");
 import i18nModule = require("./i18n/i18n");
 import router = require("./router");
+import geo = require('./tools/geometryTools');
 
 var i18n = new i18nModule.i18n();
 var app = express();
@@ -21,7 +22,6 @@ app.engine('jade', require("jade").__express);
 app.use(i18n.middleware);
 
 app.get('/svg/logo.svg', function(req : express.Request, res : express.Response) {
-    var geo = require('./tools/geometryTools');
     res.locals.geometryTools = geo;
 
     var imageSize = 128;
