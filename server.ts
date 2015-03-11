@@ -6,6 +6,7 @@
 
 import express = require("express");
 import i18nModule = require("./i18n/i18n");
+import router = require("./router");
 
 var i18n = new i18nModule.i18n();
 var app = express();
@@ -57,18 +58,8 @@ app.get('/svg/logo.svg', function(req : express.Request, res : express.Response)
     res.render('svg/logo.jade');
 });
 
-app.get('/', function(req : express.Request, res : express.Response) {
-    res.render('index.jade');
-});
-
-app.get('/en', function(req : express.Request, res : express.Response) {
-    res.render('index.jade');
-});
-
-app.use(function(req : express.Request, res : express.Response) {
-    res.status(404);
-    res.render('404.jade');
-});
+app.use('/en', router.createRouter());
+app.use('/', router.createRouter());
 
 // Azure sets process.env.port so that we know on which port we need to listen. Falls back to 80 for local testing
 var port = process.env.port || 80;

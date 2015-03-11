@@ -14,7 +14,7 @@ import path = require('path');
  * The translation class
  */
 export class i18n {
-    private translations = {
+    private translations : any = {
         "en-US" : {},
         "fr-FR" : {}
     };
@@ -72,7 +72,7 @@ export class i18n {
         }
 
         var path = key.split('.');
-        var currentObject = this.translations[locale];
+        var currentObject : any = this.translations[locale];
 
         for(var i=0;i<path.length;i++) {
             if(!currentObject.hasOwnProperty(path[i])) {
