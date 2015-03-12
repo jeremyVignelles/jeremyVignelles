@@ -1,22 +1,23 @@
 {
-  "name": "jeremyVignelles",
-  "version": "0.0.0",
-  "description": "my curriculum vitae",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jeremyVignelles/jeremyVignelles.git"
-  },
-  "author": "Jérémy VIGNELLES",
-  "license": "Apache License 2.0",
-  "bugs": {
-    "url": "https://github.com/jeremyVignelles/jeremyVignelles/issues"
-  },
-  "dependencies": {
-    "express": "~4.12.0",
-    "jade": "~1.9.2"
-  }
+    "name": "jeremyVignelles",
+    "version": "0.0.0",
+    "description": "my curriculum vitae",
+    "main": "server.js",
+    "engines":{"node": "0.10.x"},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jeremyVignelles/jeremyVignelles.git"
+    },
+    "author": "Jérémy VIGNELLES",
+    "license": "Apache License 2.0",
+    "bugs": {
+        "url": "https://github.com/jeremyVignelles/jeremyVignelles/issues"
+    },
+    "dependencies": {
+        "express": "~4.12.0",
+        "jade": "~1.9.2"
+    }
 }
