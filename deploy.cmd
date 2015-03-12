@@ -114,18 +114,21 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 )
 
 :: 2. Building server-side typescript
+echo Building server-side typescript
 call :ExecuteCmd "%TYPESCRIPT_CMD%" --module "commonjs" --target ES5 --noImplicitAny server.ts router.ts tools/geometryTools.ts i18n/i18n.ts
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 3. Building client-side typescript
+echo Building client-side typescript
 call :ExecuteCmd "%TYPESCRIPT_CMD%" --target ES5 --out script/output/script.js --noImplicitAny script/navbar.ts
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 4. Building client-side stylesheets
-call :ExecuteCmd "%LESS_CMD%" --no-color stylesheet/style.less stylesheet/output/style.css
+echo Building client-side stylesheets
+call :ExecuteCmd "%LESS_CMD%" --verbose --no-color stylesheet/style.less stylesheet/output/style.css
 IF !ERRORLEVEL! NEQ 0 goto error
 
-call :ExecuteCmd "%LESS_CMD%" --no-color stylesheet/style-ie.less stylesheet/output/style-ie.css
+call :ExecuteCmd "%LESS_CMD%" --verbose --no-color stylesheet/style-ie.less stylesheet/output/style-ie.css
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 5. Select node version
