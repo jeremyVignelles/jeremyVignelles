@@ -5,11 +5,13 @@
 ///<reference path='i18n/i18n' />
 
 import express = require("express");
-import i18nModule = require("./i18n/i18n");
+import i18n = require("./i18n/i18n");
 import svgRouter = require("./svgRouter");
 import router = require("./router");
+import dataManager = require("./data/dataManager");
 
-var i18n = new i18nModule.i18n();
+dataManager.instance.build();
+
 var app = express();
 
 app.use('/stylesheet', express.static(__dirname + "/stylesheet/output"));

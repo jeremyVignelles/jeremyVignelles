@@ -1,9 +1,9 @@
 /**
  * The translation module
  */
-var fs = require('fs');
 var url = require('url');
 var path = require('path');
+var jsonLoader = require('../tools/jsonLoader');
 /**
  * The translation class
  */
@@ -46,8 +46,8 @@ var i18n = (function () {
             }
             next();
         };
-        this.translations["en-US"] = JSON.parse(fs.readFileSync(path.join(__dirname, "en-US", "translation.json"), { encoding: "UTF-8" }));
-        this.translations["fr-FR"] = JSON.parse(fs.readFileSync(path.join(__dirname, "fr-FR", "translation.json"), { encoding: "UTF-8" }));
+        this.translations["en-US"] = jsonLoader.loadSync(path.join(__dirname, "en-US", "translation.json"));
+        this.translations["fr-FR"] = jsonLoader.loadSync(path.join(__dirname, "fr-FR", "translation.json"));
     }
     /**
      * Translate the given key by using the given locale
@@ -84,5 +84,6 @@ var i18n = (function () {
     };
     return i18n;
 })();
-exports.i18n = i18n;
+var instance = new i18n();
+exports.middleware = instance.middleware;
 //# sourceMappingURL=i18n.js.map

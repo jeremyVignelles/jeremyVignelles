@@ -4,17 +4,19 @@
 
 ///<reference path='../DefinitelyTyped/express/express.d.ts' />
 ///<reference path='../DefinitelyTyped/node/node.d.ts' />
+///<reference path='i18nInterfaces.d.ts' />
 
 import express = require('express');
 import fs = require('fs');
 import url = require('url');
 import path = require('path');
+import jsonLoader = require('../tools/jsonLoader');
 
 /**
  * The translation class
  */
-export class i18n {
-    private translations : any = {
+class i18n {
+    private translations : ITranslatableContent<any> = {
         "en-US" : {},
         "fr-FR" : {}
     };
@@ -23,8 +25,8 @@ export class i18n {
      * Constructs the i18n class
      */
     public constructor() {
-        this.translations["en-US"] = JSON.parse(fs.readFileSync(path.join(__dirname, "en-US", "translation.json"), {encoding : "UTF-8" }));
-        this.translations["fr-FR"] = JSON.parse(fs.readFileSync(path.join(__dirname, "fr-FR", "translation.json"), {encoding : "UTF-8" }));
+        this.translations["en-US"] = jsonLoader.loadSync<any>(path.join(__dirname, "en-US", "translation.json"));
+        this.translations["fr-FR"] = jsonLoader.loadSync<any>(path.join(__dirname, "fr-FR", "translation.json"));
     }
 
     /**
@@ -58,7 +60,7 @@ export class i18n {
         }
 
         next();
-    }
+    };
 
     /**
      * Translate the given key by using the given locale
@@ -99,3 +101,6 @@ export class i18n {
     }
 }
 
+var instance = new i18n();
+
+export var middleware = instance.middleware;

@@ -1,0 +1,15 @@
+{
+    "identifier": "c-sharp",
+    "name": {
+        "en-US": "C#",
+        "fr-FR": "C#"
+    },
+    "description": {
+        "en-US": "",
+        "fr-FR": ""
+    },
+    "url": {
+        "en-US": "tags/c-sharp",
+        "fr-FR": "tags/c-sharp"
+    }
+}

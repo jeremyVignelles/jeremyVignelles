@@ -115,7 +115,7 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
 
 :: 2. Building server-side typescript
 echo Building server-side typescript
-call :ExecuteCmd "%TYPESCRIPT_CMD%" --module "commonjs" --target ES5 --noImplicitAny server.ts router.ts svgRouter.ts tools/geometryTools.ts i18n/i18n.ts
+call :ExecuteCmd "%TYPESCRIPT_CMD%" --module "commonjs" --target ES5 --noImplicitAny server.ts router.ts svgRouter.ts data/dataManager.ts tools/geometryTools.ts tools/jsonLoader.ts i18n/i18n.ts
 IF !ERRORLEVEL! NEQ 0 goto error
 
 :: 3. Building client-side typescript

@@ -1,0 +1,28 @@
+{
+    "identifier": "c-sharp",
+    "title": {
+        "en-US": "C#",
+        "fr-FR": "C#"
+    },
+    "logo": "",
+    "summary": {
+        "en-US": "My favorite programming language.",
+        "fr-FR": "Mon langage de programmation préféré."
+    },
+    "description": {
+        "en-US": "",
+        "fr-FR": ""
+    },
+    "tags": ["c-sharp", "language"],
+    "url": {
+        "en-US": "skills/c-sharp",
+        "fr-FR": "competences/c-sharp"
+    },
+    "achievements": [],
+    "level": "80",
+    "levelComment": {
+        "en-US": "Achieved many projects with this powerful language.",
+        "fr-FR": "A mené à bien de nombreux projets avec ce langage puissant."
+    },
+    "link": null
+}

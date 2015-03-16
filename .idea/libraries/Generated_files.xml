@@ -3,18 +3,22 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/tools/geometryTools.js" />
-        <item url="file://$PROJECT_DIR$/server.js" />
+        <item url="file://$PROJECT_DIR$/tools/jsonLoader.js" />
         <item url="file://$PROJECT_DIR$/svgrouter.js" />
+        <item url="file://$PROJECT_DIR$/server.js" />
         <item url="file://$PROJECT_DIR$/i18n/i18n.js" />
+        <item url="file://$PROJECT_DIR$/data/dataManager.js" />
         <item url="file://$PROJECT_DIR$/router.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/script/script.js" />
       <root url="file://$PROJECT_DIR$/tools/geometryTools.js" />
-      <root url="file://$PROJECT_DIR$/svgrouter.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
+      <root url="file://$PROJECT_DIR$/svgrouter.js" />
+      <root url="file://$PROJECT_DIR$/tools/jsonLoader.js" />
       <root url="file://$PROJECT_DIR$/i18n/i18n.js" />
+      <root url="file://$PROJECT_DIR$/data/dataManager.js" />
       <root url="file://$PROJECT_DIR$/router.js" />
     </CLASSES>
     <SOURCES />

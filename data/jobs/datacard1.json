@@ -1,0 +1,28 @@
+{
+    "identifier": "datacard1",
+    "title": {
+        "en-US": "Internships at Datacard",
+        "fr-FR": "Stages chez Datacard"
+    },
+    "logo": "http://www.datacard.com/images/text/datacard-group-logo.gif",
+    "summary": {
+        "en-US": "C++ administration interfaces and C++/js client/server machine control",
+        "fr-FR": "Interfaces d'administration en C++ et contrôle d'une machine en client/serveur en C++/js"
+    },
+    "description": {
+        "en-US": "",
+        "fr-FR": ""
+    },
+    "tags": ["c-plus-plus", "javascript", "internship"],
+    "url": {
+        "en-US": "jobs/datacard1",
+        "fr-FR": "emplois/datacard1"
+    },
+    "achievements": [],
+    "company": "Datacard group",
+    "companyLink": "http://www.datacard.com/",
+    "dates": {
+        "en-US": "nov 2009 - june 2012",
+        "fr-FR": "nov 2009 - juin 2012"
+    }
+}
