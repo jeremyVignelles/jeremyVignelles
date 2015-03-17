@@ -113,6 +113,8 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
+pushd "%DEPLOYMENT_TARGET%"
+
 :: 2. Building server-side typescript
 echo Building server-side typescript
 call :ExecuteCmd "%TYPESCRIPT_CMD%" --module "commonjs" --target ES5 --noImplicitAny server.ts router.ts svgRouter.ts data/dataManager.ts tools/geometryTools.ts tools/jsonLoader.ts i18n/i18n.ts
@@ -130,6 +132,8 @@ IF !ERRORLEVEL! NEQ 0 goto error
 
 call :ExecuteCmd "%LESS_CMD%" --verbose --no-color stylesheet/style-ie.less stylesheet/output/style-ie.css
 IF !ERRORLEVEL! NEQ 0 goto error
+
+popd
 
 :: 5. Select node version
 call :SelectNodeVersion
