@@ -5,7 +5,7 @@
     },
     "menu": {
         "collapse-button": "Menu",
-        "show-on-github": "Show on GitHub"
+        "show-on-github": "Afficher sur GitHub"
     },
     "error" : {
         "404" : "La page que vous avez demandé n'a pas été trouvée.",
@@ -13,7 +13,11 @@
         "unsupported_ie" : "Votre version d'Internet explorer n'est pas supportée et vous pouvez constater des comportements inattendus.<br />Avez-vous envisagé d'utiliser un autre navigateur? Pourquoi pas votre téléphone portable?",
         "using_ie" : "Vous utilisez une ancienne version de Microsoft Internet Explorer. Ce site fonctionne désormais en mode dégradé, et vous pourriez en profiter pleinement en utilisant un autre navigateur.<br />Avez-vous essayé avec le navigateur de votre smartphone?"
     },
+    "contact" : {
+        "label" : "Coordonnées",
+        "url" : "https://docs.google.com/forms/d/1QOvPTvsQBJVakaWq_TXJ8ZjdXVEjgyZPth4BFWniRek/viewform?usp=send_form"
+    },
     "index" : {
-        "comingSoon" : "Bientôt..."
+        "desiredJob" : "Ingénieur logiciel Recherche et Développement"
     }
 }

@@ -21,8 +21,11 @@
 @navbar-inner-height: @navbar-height - @navbar-border-height;
 
 #navbar-inner-content {
+  display:-webkit-flex;// For safari only
   display:flex;
+  -webkit-flex-direction:row;// For safari only
   flex-direction: row;
+  -webkit-justify-content: left;// For safari only
   justify-content: left;
   width: 100%;
   height: @navbar-inner-height;
@@ -48,9 +51,13 @@
   /* This style is applied only when the navbar is not collapsed*/
   @media(min-width:@screen-small) {
     ul {
+      -webkit-flex: 1;// For safari only
       flex: 1;
+      display:-webkit-flex;// For safari only
       display:flex;
+      -webkit-flex-direction: row;// For safari only
       flex-direction: row;
+      -webkit-justify-content: left;// For safari only
       justify-content: left;
       height: @navbar-inner-height;
 

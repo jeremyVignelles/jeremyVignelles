@@ -5,7 +5,7 @@
     },
     "menu": {
         "collapse-button": "Menu",
-        "show-on-github": "Afficher sur GitHub"
+        "show-on-github": "Show on GitHub"
     },
     "error" : {
         "404" : "The page that you requested was not found.",
@@ -13,7 +13,11 @@
         "unsupported_ie" : "Your version of Microsoft Internet Explorer is not supported and you may experience unexpected behaviours. Consider using another browser. Why not your mobile phone?",
         "using_ie" : "You are using an old version of Microsoft Internet Explorer. This website is now working in degraded mode, and you could fully enjoy it by using another browser.<br /> Did you try with your smartphone's browser?"
     },
+    "contact" : {
+        "label" : "Contact information",
+        "url" : "https://docs.google.com/forms/d/1iMBgvcnA5GxcuZulFfUkUuDeRH-zunsSj8kD7dxEfak/viewform?usp=send_form"
+    },
     "index" : {
-        "comingSoon" : "Coming soon..."
+        "desiredJob" : "Research and Development software engineer"
     }
 }
