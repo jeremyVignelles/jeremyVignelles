@@ -23,7 +23,7 @@ html(lang=lang)
                     ul(role="menu")
                         li: a(href="/") Version Française
                         li: a(href="/en") English version
-                        li: a(href=_("contact.url"))= _("contact.label")
+                        li: a(href=dm.getDataAboutMe().contactUrl[locale])= _("menu.contact")
                     div#fork-me
                         a(href="https://github.com/jeremyVignelles/jeremyVignelles")= _("menu.showOnGithub")
         main#content

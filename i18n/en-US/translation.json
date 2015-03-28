@@ -5,21 +5,14 @@
     },
     "menu": {
         "collapseButton": "Menu",
-        "showOnGithub": "Show on GitHub"
+        "showOnGithub": "Show on GitHub",
+        "contact" : "Contact information"
     },
     "message" : {
         "404" : "The page that you requested was not found.",
         "404BackToHome" : "Are you lost? Let me bring you back to the <a href=\"/en\">home page</a>",
         "unsupportedIe" : "Your version of Microsoft Internet Explorer is not supported and you may experience unexpected behaviours. Consider using another browser. Why not your mobile phone?",
         "usingIe" : "You are using an old version of Microsoft Internet Explorer. This website is now working in degraded mode, and you could fully enjoy it by using another browser.<br /> Did you try with your smartphone's browser?",
-        "underConstruction" : "This website is still under active development. Content is added regularly, so you can come back later to learn something new about me :)",
-        "hiringStatus" : "Available from April, 1st 2015"
-    },
-    "contact" : {
-        "label" : "Contact information",
-        "url" : "https://docs.google.com/forms/d/1iMBgvcnA5GxcuZulFfUkUuDeRH-zunsSj8kD7dxEfak/viewform?usp=send_form"
-    },
-    "index" : {
-        "desiredJob" : "Research and Development software engineer"
+        "underConstruction" : "This website is still under active development. Content is added regularly, so you can come back later to learn something new about me :)"
     }
 }

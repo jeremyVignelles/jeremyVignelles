@@ -5,21 +5,14 @@
     },
     "menu": {
         "collapseButton": "Menu",
-        "showOnGithub": "Afficher sur GitHub"
+        "showOnGithub": "Afficher sur GitHub",
+        "contact": "Coordonnées"
     },
     "message" : {
         "404" : "La page que vous avez demandé n'a pas été trouvée.",
         "404BackToHome" : "Êtes-vous perdu? Laissez-moi vous ramener à la <a href=\"/\">page d'accueil</a>",
         "unsupportedIe" : "Votre version d'Internet explorer n'est pas supportée et vous pouvez constater des comportements inattendus.<br />Avez-vous envisagé d'utiliser un autre navigateur? Pourquoi pas votre téléphone portable?",
         "usingIe" : "Vous utilisez une ancienne version de Microsoft Internet Explorer. Ce site fonctionne désormais en mode dégradé, et vous pourriez en profiter pleinement en utilisant un autre navigateur.<br />Avez-vous essayé avec le navigateur de votre smartphone?",
-        "underConstruction" : "Ce site web est toujours en développement actif. Du contenu est ajouté régulièrement, vous pouvez donc revenir plus tard pour apprendre de nouvelles choses sur moi :)",
-        "hiringStatus" : "Disponible dès le 1er avril 2015"
-    },
-    "contact" : {
-        "label" : "Coordonnées",
-        "url" : "https://docs.google.com/forms/d/1QOvPTvsQBJVakaWq_TXJ8ZjdXVEjgyZPth4BFWniRek/viewform?usp=send_form"
-    },
-    "index" : {
-        "desiredJob" : "Ingénieur logiciel Recherche et Développement"
+        "underConstruction" : "Ce site web est toujours en développement actif. Du contenu est ajouté régulièrement, vous pouvez donc revenir plus tard pour apprendre de nouvelles choses sur moi :)"
     }
 }

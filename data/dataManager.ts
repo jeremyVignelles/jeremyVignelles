@@ -1,10 +1,12 @@
 /**
  * The module that exposes functions to manipulate the data
  */
+///<reference path='../DefinitelyTyped/express/express.d.ts' />
 ///<reference path='../i18n/i18nInterfaces.d.ts' />
 ///<reference path='./sourceDataInterfaces.d.ts' />
 ///<reference path='./generatedDataInterfaces.d.ts' />
 
+import express = require('express');
 import path = require('path');
 import jsonLoader = require('../tools/jsonLoader');
 import util = require('util');
@@ -22,6 +24,7 @@ class DataManager {
         var tags = jsonLoader.loadAllJsonSync<ISourceTagData>(path.join(__dirname, "tags"));
 
         this.database = {
+            aboutMe: jsonLoader.loadSync<IAboutMeData>(path.join(__dirname, "aboutMe.json")),
             jobs: {},
             projects: {},
             qualifications: {},
@@ -68,6 +71,13 @@ class DataManager {
         }
 
         return <T>this.database[matches[1]][matches[2]];
+    }
+
+    /**
+     * Gets data about me
+     */
+    public getDataAboutMe() : IAboutMeData {
+        return this.database.aboutMe;
     }
 
 
@@ -197,3 +207,7 @@ class DataManager {
 }
 
 export var instance = new DataManager();
+export var middleware = (req : express.Request, res : express.Response, next : Function) => {
+    res.locals.dm = instance;
+    next();
+};

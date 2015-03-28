@@ -35,6 +35,8 @@ interface IGeneratedTagData extends ISourceTagData, IItemRelationship {
  * The generated object in which data will be searched
  */
 interface IGeneratedDatabase {
+    aboutMe: IAboutMeData;
+
     jobs: {
         [index:string] : IGeneratedJobData;
     };

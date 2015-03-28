@@ -147,3 +147,18 @@ interface ISourceRelationshipData {
      */
     relations: string[][];
 }
+
+/**
+ * Represents the structure of the data that describes me
+ */
+interface IAboutMeData {
+    /**
+     * The job that I'm targeting
+     */
+    desiredJob: ITranslatableString;
+
+    /**
+     * The contact URL
+     */
+    contactUrl: ITranslatableString;
+}

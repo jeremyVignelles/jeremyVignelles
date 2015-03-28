@@ -23,6 +23,9 @@ app.engine('jade', require("jade").__express);
 // Translation
 app.use(i18n.middleware);
 
+// Data manager for jade views
+app.use(dataManager.middleware);
+
 app.use('/svg', svgRouter.createRouter());
 
 app.use('/en', router.createRouter());
