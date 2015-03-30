@@ -153,6 +153,16 @@ interface ISourceRelationshipData {
  */
 interface IAboutMeData {
     /**
+     * Do I need a comment for this?
+     */
+    firstName: string;
+
+    /**
+     * Do I need a comment for this?
+     */
+    lastName: string;
+
+    /**
      * The job that I'm targeting
      */
     desiredJob: ITranslatableString;
@@ -161,4 +171,9 @@ interface IAboutMeData {
      * The contact URL
      */
     contactUrl: ITranslatableString;
+
+    /**
+     * Which kind of jobs am I interested in?
+     */
+    jobInterests: ITranslatableString;
 }
