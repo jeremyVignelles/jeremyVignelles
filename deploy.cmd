@@ -125,7 +125,7 @@ pushd "%DEPLOYMENT_TARGET%"
 
 :: Running grunt
 echo Running grunt
-call :ExecuteCmd "%GRUNT_CMD%" -v build
+call :ExecuteCmd "%GRUNT_CMD%" --no-color -v build
 IF !ERRORLEVEL! NEQ 0 goto error
 
 popd
