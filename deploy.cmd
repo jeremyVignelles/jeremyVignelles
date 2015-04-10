@@ -51,10 +51,10 @@ IF NOT DEFINED KUDU_SYNC_CMD (
 IF NOT DEFINED GRUNT_CMD (
    :: Install Grunt
    echo Installing Grunt
-   call npm install grunt-cli -g --silent
+   call npm install grunt-cli --silent
    IF !ERRORLEVEL! NEQ 0 goto error
 
-   SET GRUNT_CMD=%appdata%\npm\grunt.cmd
+   SET GRUNT_CMD=.\node_modules\.bin\grunt.cmd
  )
 
 goto Deployment
