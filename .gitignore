@@ -31,7 +31,10 @@ node_modules
 .idea/workspace.xml
 .idea/tasks.xml
 
+.tscache
+
 # built files
 *.js
+!Gruntfile.js
 *.js.map
 *.css

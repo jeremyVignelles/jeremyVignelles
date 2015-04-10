@@ -66,11 +66,11 @@ class DataManager {
         }
 
         var matches = idRegex.exec(id);
-        if(['jobs', 'projects', 'qualifications', 'skills', 'tags'].indexOf(matches[1]) == -1) {
+        if(['jobs', 'projects', 'qualifications', 'skills', 'tags'].indexOf(matches[1]) === -1) {
             return null;
         }
 
-        return <T>this.database[matches[1]][matches[2]];
+        return <T>this.database[matches[1]][matches[2]] || null;
     }
 
     /**
@@ -124,7 +124,7 @@ class DataManager {
         categoryUrl[matches[2]] = identifier;
 
         matches = idRegex.exec(url["fr-FR"]);
-        var categoryUrl = this.database.url["fr-FR"][matches[1]];
+        categoryUrl = this.database.url["fr-FR"][matches[1]];
         if(!categoryUrl) {
             this.database.url["fr-FR"][matches[1]] = {};
             categoryUrl = this.database.url["fr-FR"][matches[1]];
@@ -141,7 +141,7 @@ class DataManager {
     private addRelationships(itemUrlIdentifier : string, relations : ISourceRelationshipData) : void {
         var self = this;
         var currentItem = this.findById<IItemRelationship>(itemUrlIdentifier);
-        if(currentItem == null) {
+        if(currentItem === null) {
             throw new Error('item not found with identifier ' + itemUrlIdentifier);
         }
 
@@ -149,16 +149,16 @@ class DataManager {
 
         var associatedItems: string[] = [];
         relations.relations.forEach(function(item) {
-            if(item[0] == itemUrlIdentifier) {
+            if(item[0] === itemUrlIdentifier) {
                 associatedItems.push(item[1]);
-            } else if(item[1] == itemUrlIdentifier) {
+            } else if(item[1] === itemUrlIdentifier) {
                 associatedItems.push(item[0]);
             }
         });
 
         associatedItems.forEach(function(associatedItemId) {
             var associatedItem = self.findById<IItemRelationship>(associatedItemId);
-            if(associatedItem == null) {
+            if(associatedItem === null) {
                 return;
             }
 

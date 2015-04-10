@@ -15,7 +15,7 @@
       <root url="file://$PROJECT_DIR$/script/script.js" />
       <root url="file://$PROJECT_DIR$/tools/geometryTools.js" />
       <root url="file://$PROJECT_DIR$/server.js" />
-      <root url="file://$PROJECT_DIR$/svgrouter.js" />
+      <root url="file://$PROJECT_DIR$/svgRouter.js" />
       <root url="file://$PROJECT_DIR$/tools/jsonLoader.js" />
       <root url="file://$PROJECT_DIR$/i18n/i18n.js" />
       <root url="file://$PROJECT_DIR$/data/dataManager.js" />

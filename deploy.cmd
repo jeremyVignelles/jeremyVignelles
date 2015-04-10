@@ -48,23 +48,14 @@ IF NOT DEFINED KUDU_SYNC_CMD (
   SET KUDU_SYNC_CMD=%appdata%\npm\kuduSync.cmd
 )
 
-IF NOT DEFINED TYPESCRIPT_CMD (
-  :: Install Typescript
-  echo Installing typescript
-  call npm install typescript -g --silent
-  IF !ERRORLEVEL! NEQ 0 goto error
+IF NOT DEFINED GRUNT_CMD (
+   :: Install Grunt
+   echo Installing Grunt
+   call npm install grunt-cli -g --silent
+   IF !ERRORLEVEL! NEQ 0 goto error
 
-  SET TYPESCRIPT_CMD=%appdata%\npm\tsc.cmd
-)
-
-IF NOT DEFINED LESS_CMD (
-  :: Install Less
-  echo Installing less
-  call npm install less -g --silent
-  IF !ERRORLEVEL! NEQ 0 goto error
-
-  SET LESS_CMD=%appdata%\npm\lessc.cmd
-)
+   SET GRUNT_CMD=%appdata%\npm\grunt.cmd
+ )
 
 goto Deployment
 
@@ -113,32 +104,10 @@ IF /I "%IN_PLACE_DEPLOYMENT%" NEQ "1" (
   IF !ERRORLEVEL! NEQ 0 goto error
 )
 
-pushd "%DEPLOYMENT_TARGET%"
-
-:: 2. Building server-side typescript
-echo Building server-side typescript
-call :ExecuteCmd "%TYPESCRIPT_CMD%" --module "commonjs" --target ES5 --noImplicitAny server.ts router.ts svgRouter.ts data/dataManager.ts tools/geometryTools.ts tools/jsonLoader.ts i18n/i18n.ts
-IF !ERRORLEVEL! NEQ 0 goto error
-
-:: 3. Building client-side typescript
-echo Building client-side typescript
-call :ExecuteCmd "%TYPESCRIPT_CMD%" --target ES5 --out script/output/script.js --noImplicitAny script/navbar.ts
-IF !ERRORLEVEL! NEQ 0 goto error
-
-:: 4. Building client-side stylesheets
-echo Building client-side stylesheets
-call :ExecuteCmd "%LESS_CMD%" --verbose --no-color stylesheet/style.less stylesheet/output/style.css
-IF !ERRORLEVEL! NEQ 0 goto error
-
-call :ExecuteCmd "%LESS_CMD%" --verbose --no-color stylesheet/style-ie.less stylesheet/output/style-ie.css
-IF !ERRORLEVEL! NEQ 0 goto error
-
-popd
-
-:: 5. Select node version
+:: 2. Select node version
 call :SelectNodeVersion
 
-:: 6. Install npm packages
+:: 3. Install npm packages
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
   call :ExecuteCmd !NPM_CMD! install --production
@@ -151,6 +120,15 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 :: Post deployment stub
 IF DEFINED POST_DEPLOYMENT_ACTION call "%POST_DEPLOYMENT_ACTION%"
 IF !ERRORLEVEL! NEQ 0 goto error
+
+pushd "%DEPLOYMENT_TARGET%"
+
+:: Running grunt
+echo Running grunt
+call :ExecuteCmd "%GRUNT_CMD%" -v build
+IF !ERRORLEVEL! NEQ 0 goto error
+
+popd
 
 goto end
 

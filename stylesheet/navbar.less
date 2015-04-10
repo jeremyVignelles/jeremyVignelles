@@ -10,6 +10,7 @@
 }
 
 #navbar-content {
+  box-sizing: border-box;
   height: @navbar-height;
   background: @navbar-background;
   border-bottom: solid @navbar-border-height darken(@navbar-background, 25%);
@@ -25,8 +26,8 @@
   display:flex;
   -webkit-flex-direction:row;// For safari only
   flex-direction: row;
-  -webkit-justify-content: left;// For safari only
-  justify-content: left;
+  -webkit-justify-content: flex-start;// For safari only
+  justify-content: flex-start;
   width: 100%;
   height: @navbar-inner-height;
 
@@ -57,8 +58,8 @@
       display:flex;
       -webkit-flex-direction: row;// For safari only
       flex-direction: row;
-      -webkit-justify-content: left;// For safari only
-      justify-content: left;
+      -webkit-justify-content: flex-start;// For safari only
+      justify-content: flex-start;
       height: @navbar-inner-height;
 
       li {
@@ -99,6 +100,7 @@
     position:relative;
 
     label {
+      box-sizing: border-box;
       padding-left: 1em;
       padding-right: 1em;
       .center-inline(100%, 1em);

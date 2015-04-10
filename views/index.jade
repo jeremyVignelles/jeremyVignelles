@@ -3,13 +3,12 @@ block vars
     - var title = _('title.index');
     - var me = dm.getDataAboutMe();
 block content
-    section
-        h1
-            span= me.firstName
-            span &nbsp;
-            span= me.lastName
-            span &nbsp;-&nbsp;
-            span= me.desiredJob[locale]
-        div.alert.info= dm.getDataAboutMe().hiringStatus[locale]
-        section !{dm.getDataAboutMe().jobInterests[locale]}
-        p: a(href=dm.getDataAboutMe().contactUrl[locale])= _("menu.contact")
+    h1
+        span= me.firstName
+        span &nbsp;
+        span= me.lastName
+        span &nbsp;-&nbsp;
+        span= me.desiredJob[locale]
+    div.alert.info= dm.getDataAboutMe().hiringStatus[locale]
+    section !{dm.getDataAboutMe().jobInterests[locale]}
+    p: a(href=dm.getDataAboutMe().contactUrl[locale])= _("menu.contact")

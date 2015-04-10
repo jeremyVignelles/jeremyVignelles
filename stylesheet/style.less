@@ -1,9 +1,6 @@
 /**
   The main file of the stylesheet
 */
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext);
-
 @import "variables.less";
 @import "mixins.less";
 
@@ -22,22 +19,20 @@ body {
   }
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-}
-
 h1 {
+  .heading-font();
   font-size: 1.9em;
   margin: 0.5em 0.2em 0.5em 0.2em;
 }
 
 h2 {
+  .heading-font();
   font-size: 1.5em;
   margin: 0.5em 0.8em 0.5em 0.8em;
 }
 
 h3 {
+  .heading-font();
   font-size: 1.1em;
   margin: 0.5em 1.8em 0.5em 1.8em;
 }

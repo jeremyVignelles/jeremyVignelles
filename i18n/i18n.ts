@@ -47,7 +47,7 @@ class i18n {
         var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
         var parsedUrl = url.parse(fullUrl);
 
-        if(res.locals.locale == 'fr-FR') {
+        if(res.locals.locale === 'fr-FR') {
             parsedUrl.pathname = "/en" + parsedUrl.pathname;
             res.locals.alternatives = {
                 'en': url.format(parsedUrl)
@@ -93,7 +93,7 @@ class i18n {
      * @returns {string} The locale used
      */
     private getLocale(req : express.Request) : string {
-        if(req.path.indexOf("/en") == 0) {
+        if(req.path.indexOf("/en") === 0) {
             return "en-US";
         } else {
             return "fr-FR";
