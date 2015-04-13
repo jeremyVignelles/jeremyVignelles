@@ -8,7 +8,6 @@
 
 import express = require('express');
 import fs = require('fs');
-import url = require('url');
 import path = require('path');
 import jsonLoader = require('../tools/jsonLoader');
 
@@ -39,25 +38,18 @@ class i18n {
         res.locals.locale = this.getLocale(req);
         res.locals.lang = res.locals.locale.substring(0,2);
 
+        res.locals.getURL = function(item : IGeneratedDataItem, locale: string) {
+            switch(locale) {
+                case "en-US" : return '/en/' + item.url[locale];
+                case "fr-FR" : return '/' + item.url[locale];
+                default: throw new Error('Unsupported locale ' + locale);
+            }
+        };
+
         var self = this;
         res.locals._ = function(key : string) : string {
             return self.translate(key, res.locals.locale);
         };
-
-        var fullUrl = req.protocol + "://" + req.get("host") + req.originalUrl;
-        var parsedUrl = url.parse(fullUrl);
-
-        if(res.locals.locale === 'fr-FR') {
-            parsedUrl.pathname = "/en" + parsedUrl.pathname;
-            res.locals.alternatives = {
-                'en': url.format(parsedUrl)
-            };
-        } else {
-            parsedUrl.pathname = parsedUrl.pathname.replace("/en/", "/");
-            res.locals.alternatives = {
-                'fr': url.format(parsedUrl)
-            };
-        }
 
         next();
     };

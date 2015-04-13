@@ -68,6 +68,11 @@ interface ISourceJobData extends ISourceData {
      * "November 2013 - June 2014", "2015", ...
      */
         dates: ITranslatableString;
+
+    /**
+     * The order of the job. 1 is the first in the chronological order
+     */
+        order: number;
 }
 
 /**
@@ -78,6 +83,11 @@ interface ISourceProjectData extends ISourceData {
      * The project URL
      */
         projectLink: string;
+
+    /**
+     * The arbitrary order in which the projects will be displayed. Higher priority will be displayed first
+     */
+        priority: number;
 }
 
 /**
@@ -88,6 +98,11 @@ interface ISourceQualificationData extends ISourceData {
      * The dates, as a translatable string
      */
         dates: ITranslatableString;
+
+    /**
+     * The order of the qualification. 1 is the first in the chronological order
+     */
+    order: number;
 }
 
 /**
@@ -112,7 +127,8 @@ interface ISourceSkillData extends ISourceData {
 
 /**
  * Describe a tag metadata.
- * Tags can be created automatically from
+ * Tags can be created automatically from other data interfaces, or be explicitly described
+ * Tags are sorted by popularity, that is number of items that are contained in them
  */
 interface ISourceTagData {
     /**

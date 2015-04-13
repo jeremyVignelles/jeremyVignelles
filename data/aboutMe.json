@@ -10,8 +10,8 @@
         "fr-FR" : "https://docs.google.com/forms/d/1QOvPTvsQBJVakaWq_TXJ8ZjdXVEjgyZPth4BFWniRek/viewform?usp=send_form"
     },
     "hiringStatus" : {
-        "en-US" : "Looking for a job from April, 1st 2015",
-        "fr-FR" : "En recherche d'emploi dès le 1er avril 2015"
+        "en-US" : "Looking for a job",
+        "fr-FR" : "En recherche d'emploi"
     },
     "jobInterests" : {
         "en-US" : "<p>Passionate about new technologies and programming, I would like to take part in innovative projects allowing me to meet new challenges. Always looking for new things to learn, I am a self-taught programmer for most of my skills. My favorite languages are C# (WPF) and Javascript, and I have several years of experience in C/C++ programming, but I would also like to learn new languages like python.</p>",

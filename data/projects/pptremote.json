@@ -22,5 +22,6 @@
         "en-US": "published on google play store",
         "fr-FR": "publiée sur le google play store"
     }],
-    "projectLink": "https://sourceforge.net/projects/pptremote/"
+    "projectLink": "https://sourceforge.net/projects/pptremote/",
+    "priority": 50
 }

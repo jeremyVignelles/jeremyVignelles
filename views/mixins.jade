@@ -1,3 +1,36 @@
 mixin alternativeLanguages
-    each href,languageCode in alternatives
-        link(rel="alternate",href=href,hreflang=languageCode)
+    if alternatives
+        each href,languageCode in alternatives
+            if languageCode != lang
+                link(rel="alternate",href=href,hreflang=languageCode)
+
+mixin printJobs
+    h1= _('title.jobs')
+    each job in dm.getJobsList()
+        +printDataItemSummary(job, 'job')
+
+mixin printProjects
+    h1= _('title.projects')
+    each project in dm.getProjectsList()
+        +printDataItemSummary(project, 'project')
+
+mixin printQualifications
+    h1= _('title.qualifications')
+    each qualification in dm.getQualificationsList()
+        +printDataItemSummary(qualification, 'qualification')
+
+mixin printSkills
+    h1= _('title.skills')
+    each skill in dm.getSkillsList()
+        +printDataItemSummary(skill, 'skill')
+
+mixin printTags
+    h1= _('title.tags')
+    each tag in dm.getTagsList()
+        +printDataItemSummary(tag, 'tag')
+
+mixin printDataItemSummary (item, type)
+    article.dataItemSummary(class=type)
+        h2
+            a(href=getURL(item, locale))= item.title[locale]
+        section !{item.summary[locale]}

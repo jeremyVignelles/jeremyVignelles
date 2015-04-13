@@ -11,7 +11,7 @@ import path = require('path');
 import jsonLoader = require('../tools/jsonLoader');
 import util = require('util');
 
-var idRegex = /^([a-z0-9-]+)\/([a-z0-9-]+)$/i;
+export var idRegex = /^([a-z0-9-]+)\/([a-z0-9-]+)$/i;
 
 class DataManager {
     private database : IGeneratedDatabase;
@@ -74,12 +74,110 @@ class DataManager {
     }
 
     /**
+     * Gets the identifier corresponding to this URL
+     * @param locale The current locale
+     * @param category The requested category
+     * @param identifier The item identifier
+     * @returns {string} The id (or null if not found) which looks like 'skills/c-sharp'
+     */
+    public getIdFromURL(locale: string, category: string, identifier: string) : string {
+        var categoryArray = this.database.url[locale];
+        if(!categoryArray) {
+            return null;
+        }
+
+        var identifierArray = categoryArray[category];
+        if(!identifierArray) {
+            return null;
+        }
+
+        var id = identifierArray[identifier];
+
+        return id || null;
+    }
+
+    /**
      * Gets data about me
      */
     public getDataAboutMe() : IAboutMeData {
         return this.database.aboutMe;
     }
 
+    /**
+     * Gets the jobs
+     * @returns {IGeneratedJobData[]}
+     */
+    public getJobsList() : IGeneratedJobData[] {
+        var jobs = DataManager.makeListFromDataDictionary(this.database.jobs);
+        jobs.sort(function(a:IGeneratedJobData, b:IGeneratedJobData) {
+            return b.order - a.order;
+        });
+        return jobs;
+    }
+
+    /**
+     * Gets the list of the projects
+     * @returns {IGeneratedProjectData[]}
+     */
+    public getProjectsList() : IGeneratedProjectData[] {
+        // gets a copy of the array in order to sort items
+        var projects = DataManager.makeListFromDataDictionary(this.database.projects);
+        projects.sort(function(a:IGeneratedProjectData, b: IGeneratedProjectData) {
+            return b.priority - a.priority;
+        });
+
+        return projects;
+    }
+
+    /**
+     * Gets the list of the qualifications
+     * @returns {IGeneratedQualificationData[]}
+     */
+    public getQualificationsList() : IGeneratedQualificationData[] {
+        var qualification = DataManager.makeListFromDataDictionary(this.database.qualifications);
+        qualification.sort(function(a:IGeneratedQualificationData, b: IGeneratedQualificationData) {
+            return b.order - a.order;
+        });
+
+        return qualification;
+    }
+
+    /**
+     * Gets the list of skills, sorted in level order decreasing
+     * @returns {IGeneratedSkillData[]}
+     */
+    public getSkillsList() : IGeneratedSkillData[] {
+        var skills = DataManager.makeListFromDataDictionary(this.database.skills);
+        skills.sort(function(a:IGeneratedSkillData, b: IGeneratedSkillData) {
+            return b.level - a.level;
+        });
+
+        return skills;
+    }
+
+    /**
+     * Gets the list of tags, sorted by popularity order decreasing
+     * @returns {IGeneratedTagData[]}
+     */
+    public getTagsList() : IGeneratedTagData[] {
+        var tags = DataManager.makeListFromDataDictionary(this.database.tags);
+        tags.sort(function(a:IGeneratedTagData, b: IGeneratedTagData) {
+            return (b.jobs.length + b.projects.length + b.qualifications.length + b.skills.length) - (a.jobs.length + a.projects.length + a.qualifications.length + a.skills.length);
+        });
+
+        return tags;
+    }
+
+    /**
+     * Gets a list of values in a data dictionary
+     * @param dataDictionary the data dictionary
+     * @returns {T[]} The values
+     */
+    private static makeListFromDataDictionary<T>(dataDictionary: { [index:string] : T; }) : T[] {
+        return Object.getOwnPropertyNames(dataDictionary).map(function(name : string) : T {
+            return <T>dataDictionary[name];
+        });
+    }
 
     /**
      * Loads entirely a category of items from the data/ subfolders.

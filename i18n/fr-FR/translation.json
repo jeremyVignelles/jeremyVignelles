@@ -1,9 +1,15 @@
 {
     "title": {
         "index":"Mon CV",
-        "404":"404 Page non trouvée"
+        "404":"404 Page non trouvée",
+        "projects":"Projets",
+        "jobs":"Expériences professionnelles",
+        "qualifications":"Qualifications",
+        "skills":"Compétences",
+        "tags":"Tags"
     },
     "menu": {
+        "backHome": "Accueil",
         "collapseButton": "Menu",
         "showOnGithub": "Afficher sur GitHub",
         "contact": "Coordonnées"
@@ -13,6 +19,6 @@
         "404BackToHome" : "Êtes-vous perdu? Laissez-moi vous ramener à la <a href=\"/\">page d'accueil</a>",
         "unsupportedIe" : "Votre version d'Internet explorer n'est pas supportée et vous pouvez constater des comportements inattendus.<br />Avez-vous envisagé d'utiliser un autre navigateur? Pourquoi pas votre téléphone portable?",
         "usingIe" : "Vous utilisez une ancienne version de Microsoft Internet Explorer. Ce site fonctionne désormais en mode dégradé, et vous pourriez en profiter pleinement en utilisant un autre navigateur.<br />Avez-vous essayé avec le navigateur de votre smartphone?",
-        "underConstruction" : "Ce site web est toujours en développement actif. Du contenu est ajouté régulièrement, vous pouvez donc revenir plus tard pour apprendre de nouvelles choses sur moi :)"
+        "underConstruction" : "Ce site web est toujours en développement actif. Du contenu est ajouté régulièrement, vous pouvez donc revenir plus tard pour apprendre de nouvelles choses sur moi :)<br />Comme les fonctionnalités sont ajoutées de manière Agile, il est possible que vous trouviez l'expérience utilisateur pauvre. Ne paniquez pas, cela sera corrigé à l'avenir!"
     }
 }

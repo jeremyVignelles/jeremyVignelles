@@ -1,0 +1,10 @@
+extends ./layout
+block vars
+    - var title = currentItem.title[locale];
+block content
+    p: a(href=((lang == 'fr')?"/":("/"+lang)))= '<= ' + _('menu.backHome')
+    article.dataItem(class=currentItemType)
+        h1= title
+        section !{currentItem.summary[locale]}
+        section !{currentItem.description[locale]}
+    p: a(href=((lang == 'fr')?"/":("/"+lang)))= '<= ' + _('menu.backHome')
