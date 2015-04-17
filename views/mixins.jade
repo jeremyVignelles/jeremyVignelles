@@ -31,6 +31,9 @@ mixin printTags
 
 mixin printDataItemSummary (item, type)
     article.dataItemSummary(class=type)
-        h2
-            a(href=getURL(item, locale))= item.title[locale]
-        section !{item.summary[locale]}
+        div.logo
+            != renderJade("views/svg/"+ item.logo +".jade", context)
+        div.dataItemContent
+            h2
+                a(href=getURL(item, locale))= item.title[locale]
+            div.summary !{item.summary[locale]}

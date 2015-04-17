@@ -19,6 +19,6 @@
         "404BackToHome" : "Are you lost? Let me bring you back to the <a href=\"/en\">home page</a>",
         "unsupportedIe" : "Your version of Microsoft Internet Explorer is not supported and you may experience unexpected behaviours. Consider using another browser. Why not your mobile phone?",
         "usingIe" : "You are using an old version of Microsoft Internet Explorer. This website is now working in degraded mode, and you could fully enjoy it by using another browser.<br /> Did you try with your smartphone's browser?",
-        "underConstruction" : "This website is still under active development. Content is added regularly, so you can come back later to learn something new about me :)<br />As features are implemented in an Agile manner, you may find the user experience poor at the beginning. Don't panic, this will be fixed in the future!"
+        "underConstruction" : "This website is still under active development. Content is added regularly, so you can come back later to learn more about me :)<br />As features are implemented in an Agile manner, you may find the user experience poor at the beginning. Don't panic, this will be fixed in the future!"
     }
 }

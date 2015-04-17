@@ -12,7 +12,7 @@ block content
             span &nbsp;-&nbsp;
             span= me.desiredJob[locale]
         div.alert.info= dm.getDataAboutMe().hiringStatus[locale]
-        section !{dm.getDataAboutMe().jobInterests[locale]}
+        div !{dm.getDataAboutMe().jobInterests[locale]}
         p: a(href=dm.getDataAboutMe().contactUrl[locale])= _("menu.contact")
     section
         +printJobs

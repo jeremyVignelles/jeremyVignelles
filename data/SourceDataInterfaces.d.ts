@@ -18,7 +18,7 @@ interface ISourceData {
         title: ITranslatableString;
 
     /**
-     * The displayed logo URL
+     * The displayed logo file name (without the svg and the .jade )
      */
         logo: string;
 

@@ -25,7 +25,7 @@ function openClose(item:HTMLElement, open: boolean) {
 }
 
 document.getElementById('collapse-button-checkbox').addEventListener('change', function() {
-    // I first to do the collapsible menu using pure css, but a bug in android browser forced me to use javascript
+    // I first wanted to do the collapsible menu using pure css, but a bug in android browser forced me to use javascript
     openClose(document.getElementById('collapse-button'), this.checked);
     openClose(document.getElementById('navbar-inner-content'), this.checked);
 });

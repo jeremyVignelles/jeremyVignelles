@@ -1,32 +1,28 @@
-doctype xml
-mixin drawHexagonLine(line, intersectWithLine1, intersectWithLine2)
-    - var point1 = line.getIntersectionWith(intersectWithLine1);
-    - var point2 = line.getIntersectionWith(intersectWithLine2);
-    line(x1=point1.x, y1=point1.y, x2=point2.x, y2=point2.y, style="stroke:#888;stroke-width:3")
-
+if standalone
+    doctype xml
 svg(xmlns="http://www.w3.org/2000/svg",
     version="1.1",
-    width=parameters.imageSize,
-    height=parameters.imageSize)
-    each line, index in parameters.hexagonLines
-        + drawHexagonLine(line,parameters.hexagonLines[(index + 1) % 6],parameters.hexagonLines[(index + 5) % 6])
+    width=logoTools.imageSize,
+    height=logoTools.imageSize,
+    viewBox="0 0 "+logoTools.imageSize + " " + logoTools.imageSize)
+    style(type="text/css")
+        |.hexagonLine {
+        |   stroke: #888;
+        |   stroke-width: 3;
+        |}
+        |.rectangle {
+        |   fill: #0059b3;
+        |}
+        |.polygon1 {
+        |   fill: #3399FF;
+        |}
+        |.polygon2 {
+        |   fill: #55CCFF;
+        |}
+    each line in logoTools.hexagonSides
+        line.hexagonLine(x1=line[0].x, y1=line[0].y, x2=line[1].x, y2=line[1].y)
 
-    - var bottomRightCorner = parameters.hexagonLines[1].getIntersectionWith(parameters.hexagonLines[2]);
-    - var startY = ((parameters.imageSize / 2) - parameters.radius);
-    rect(x=(bottomRightCorner.x - parameters.thickness), y=startY, width=parameters.thickness, height=bottomRightCorner.y-startY, style="fill:#0059b3")
+    rect.rectangle(x=logoTools.rectangle.x, y=logoTools.rectangle.y, width=logoTools.rectangle.width, height=logoTools.rectangle.height)
 
-    - var parallelLine = parameters.hexagonLines[2].translate(-parameters.thickness);
-    - var points = [];
-    - points.push(parallelLine.getIntersectionWith(parameters.hexagonLines[1]));
-    - points.push(bottomRightCorner);
-    - points.push((parameters.imageSize / 2) + ',' + ((parameters.imageSize / 2) + parameters.radius));
-    - points.push(parallelLine.getIntersectionWith(parameters.hexagonLines[3]));
-    polygon(points=points.join(' '), style="fill:#3399FF")
-
-    - points = [];
-    - parallelLine = parameters.hexagonLines[3].translate(parameters.thickness);
-    - points.push(parallelLine.getIntersectionWith(parameters.hexagonLines[2]));
-    - points.push((parameters.imageSize / 2) + ',' + ((parameters.imageSize / 2) + parameters.radius));
-    - points.push(parameters.hexagonLines[3].getIntersectionWith(parameters.hexagonLines[4]));
-    - points.push(parallelLine.getIntersectionWith(parameters.hexagonLines[4]));
-    polygon(points=points.join(' '), style="fill:#5CF")
+    polygon.polygon1(points=logoTools.polygon1.join(' '))
+    polygon.polygon2(points=logoTools.polygon2.join(' '))

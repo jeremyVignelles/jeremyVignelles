@@ -1,4 +1,36 @@
 .dataItemSummary {
   padding: 5px;
   border: solid black 1px;
+  display:-webkit-flex;// For safari only
+  display: flex;
+  -webkit-flex-direction: column;// For safari only
+  flex-direction: column;
+
+  .summary {
+    font-size: 0.9em;
+    font-style: italic;
+  }
+
+  .logo {
+    padding: 10px;
+
+    svg {
+      display: block;
+      width: 150px;
+      height: 150px;
+      max-width: 100%;
+      max-height: 100%;
+      margin: auto;
+    }
+  }
+
+  .dataItemContent {
+    -webkit-flex: 1;// For safari only
+    flex: 1;
+  }
+
+  @media(min-width:@screen-small) {
+    -webkit-flex-direction: row;// For safari only
+    flex-direction: row;
+  }
 }

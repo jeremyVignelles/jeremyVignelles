@@ -4,7 +4,7 @@
         "en-US": "Internships at Datacard",
         "fr-FR": "Stages chez Datacard"
     },
-    "logo": "http://www.datacard.com/images/text/datacard-group-logo.gif",
+    "logo": "DatacardGroup",
     "summary": {
         "en-US": "C++ administration interfaces and C++/js client/server machine control",
         "fr-FR": "Interfaces d'administration en C++ et contrôle d'une machine en client/serveur en C++/js"

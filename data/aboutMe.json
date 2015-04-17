@@ -14,7 +14,7 @@
         "fr-FR" : "En recherche d'emploi"
     },
     "jobInterests" : {
-        "en-US" : "<p>Passionate about new technologies and programming, I would like to take part in innovative projects allowing me to meet new challenges. Always looking for new things to learn, I am a self-taught programmer for most of my skills. My favorite languages are C# (WPF) and Javascript, and I have several years of experience in C/C++ programming, but I would also like to learn new languages like python.</p>",
-        "fr-FR" : "<p>Passionné de nouvelles technologies et de programmation, je souhaite prendre part à des projets innovants me permettant de relever de nouveaux défis. Toujours en quête de nouvelles choses à découvrir, j'ai acquis un grand nombre de compétences de façon autodidacte. Mes langages de prédilection sont le C# (WPF) et le Javascript, et j'ai plusieurs années d'expérience en programmation C/C++, mais je souhaiterai apprendre de nouveaux langages comme le python.</p>"
+        "en-US" : "<p>Passionate about new technologies and programming, I would like to take part in innovative projects allowing me to meet new challenges. Always looking for new things to learn, I am a self-taught programmer for most of my skills. My favorite languages are C# (WPF) and Javascript. I have several years of experience in C/C++ programming, and I would also like to learn new languages like python.</p>",
+        "fr-FR" : "<p>Passionné de nouvelles technologies et de programmation, je souhaite prendre part à des projets innovants me permettant de relever de nouveaux défis. Toujours en quête de nouvelles choses à découvrir, j'ai acquis un grand nombre de compétences de façon autodidacte. Mes langages de prédilection sont le C# (WPF) et le Javascript. J'ai plusieurs années d'expérience en programmation C/C++, et je souhaiterai apprendre de nouveaux langages comme le python.</p>"
     }
 }

@@ -4,20 +4,20 @@ html(lang=lang)
     head
         block vars
         title #{title} - Jérémy VIGNELLES
-        meta(http-equiv="X-UA-Compatible", content="IE=edge")
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, user-scalable=no")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")/
+        meta(charset="UTF-8")/
+        meta(name="viewport", content="width=device-width, user-scalable=no")/
         +alternativeLanguages
         block styles
-            link(rel="stylesheet",media="screen",href="http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext")
-            link(rel="stylesheet",media="screen",href="/stylesheet/style.css")
-            | <!--[if lte IE 10]> <link rel="stylesheet" media="screen" href="/stylesheet/style-ie.css"> <![endif]-->
+            link(rel="stylesheet",media="screen",href="http://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext")/
+            link(rel="stylesheet",media="screen",href="/stylesheet/style.css")/
+            | <!--[if lte IE 10]> <link rel="stylesheet" media="screen" href="/stylesheet/style-ie.css" /> <![endif]-->
         block scripts
             script(type="text/javascript", src="/script/script.js", defer=true)
     body
         nav#navbar
             div#navbar-content
-                input#collapse-button-checkbox(type="checkbox")
+                input#collapse-button-checkbox(type="checkbox")/
                 div#collapse-button
                     label(for="collapse-button-checkbox")= _("menu.collapseButton")
                 div#navbar-inner-content

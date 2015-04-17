@@ -26,6 +26,13 @@ app.use(i18n.middleware);
 // Data manager for jade views
 app.use(dataManager.middleware);
 
+// SVG tools middleware
+app.use((req : express.Request, res : express.Response, next : Function) => {
+    res.locals.renderJade = require("jade").renderFile;
+    res.locals.logoTools = require('./tools/logoTools');
+    next();
+});
+
 app.use('/svg', svgRouter.createRouter());
 
 app.use('/en', router.createRouter());
