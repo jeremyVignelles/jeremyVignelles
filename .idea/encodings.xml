@@ -3,6 +3,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/Gruntfile.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/server.ts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/stylesheet/dataItem.less" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/svgRouter.ts" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/mixins.jade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/views/svg/logo.jade" charset="UTF-8" />
